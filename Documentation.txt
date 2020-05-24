@@ -1,0 +1,54 @@
+type vector = float list:
+This makes the type vector as float list
+
+type matrix = float list list:
+This makes the type matrix as float list list
+
+
+
+Exceptions:
+exception InvalidInput
+exception UnequalVectorSize
+exception UnequalMatrixShape
+exception IncompatibleMatrixShape
+exception SingularMatrix
+
+
+
+let rec vdim (v:vector): int :
+Used the length function to retrieve the dimension of the vector.
+let rec mkzerov (n:int): vector :
+Raised exception for negative value of n and returned an array of 0.0 by appending recursively.
+let rec iszerov (v:vector): bool :
+Recursively iterated through the list and returned false whenever a vector with non zero entry is identified.
+let rec addv (v1:vector) (v2:vector): vector :
+Recursively iterated through the vector and returned the sum of individual elements of vectors.
+let rec scalarmultv (c:float) (v:vector): vector :
+Recursively iterated through the vector and multiplied each of the element by a scalar constant.
+let rec dotprodv (v1:vector) (v2:vector): float :
+Recursively iterated through the vector and multiplied each of the corresponding element to get the dot product
+let rec crossprodv (v1:vector) (v2:vector): vector :
+Used the formula for cross product to find the crosproduct of (1*3) vector.
+
+let rec mdim (m:matrix): int*int :
+Used the length formula to return the dimension of matrix
+let rec mkzerom (m_:int) (n_:int): matrix :
+Raised an exception if any of the input is less than 0 and then made the matrix.
+let rec iszerom (m:matrix): bool :
+Recursively chcked whether each of the element is zero or not.
+let rec mkunitm (m_:int): matrix =
+Recursively made an unit matrix just containing one.
+let rec isunitm (m:matrix): bool =
+Recusively checking that the matrix is unit matrix
+let rec addm (m1:matrix) (m2:matrix): matrix =
+Recursively acessed each elemnt of both the matrix and returned their sum
+let rec scalarmultm (c:float) (m:matrix): matrix = 
+Used the float scalar and multiplied each of the element after acessing them
+let rec multm (m1:matrix) (m2:matrix): matrix =
+first used the tanspose of one of the matrix and then multiplied it with other matrix
+let rec transm (m:matrix): matrix = 
+Iterated on all the columns and made a float list list of the matrix
+let rec detm (m:matrix): float =
+Used the gaussian method to find the determinant of the matrix and returned the matrix
+let rec invm (m:matrix): matrix =
+Made an matrix by using an unit matrix and applying row transformation to both of them at the same time.
